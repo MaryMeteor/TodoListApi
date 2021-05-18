@@ -1,0 +1,11 @@
+DirectoryIndex index.php
+
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+
+#Если URI начинается с api/ то перенаправлять все запросы на index.php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php
